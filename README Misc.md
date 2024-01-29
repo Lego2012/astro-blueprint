@@ -58,3 +58,5 @@ Sometimes, improving your application CSS just takes a one-line upgrade or enhan
 # [Astro Blog](https://github.com/futurethemes/astro-blog)
 
 # [Typed.JS](https://github.com/mattboldt/typed.js)
+
+# [Install Tailwind with Astro](https://tailwindcss.com/docs/guides/astro)
