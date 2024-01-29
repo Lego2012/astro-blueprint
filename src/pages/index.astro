@@ -7,7 +7,8 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Leos Astro">
-   <div class="container">
+   <!-- This comes from Tailwind -->
+   <div class="bg-zinc-500">
       <h1>Dies ist eine neue Überschrift</h1>
       <p>{data.name}</p>
       <p>{data.nachname}</p>
@@ -17,16 +18,14 @@ import Card from "../components/Card.astro";
          >Webseite von {data.name.toUpperCase()}</a
       >
       <p>https://{data.name.toLowerCase()}merkel.de</p>
-      <Icon name="icon" size={200} color="blue" />
+      <!-- This comes from styles.css -->
+      <Icon name="icon" size={200} color="var(--lm-secondary)" />
    </div>
 </Layout>
 
 <style>
-   h1 {
-      background-color: var(--lm-primary);
-
-      &:hover {
-         background-color: green;
-      }
+   /* This comes from Open Props */
+   p {
+      color: var(--brown-2);
    }
 </style>
