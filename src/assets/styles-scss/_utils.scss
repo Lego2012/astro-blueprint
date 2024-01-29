@@ -1,0 +1,75 @@
+@use 'sass:math';
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return math.div($number, ($number * 0 + 1));
+    }
+
+    @return $number;
+}
+
+@function rem-calc($value) {
+    $rem-value: math.div(strip-unit($value), 16) + rem; 
+
+    @return $rem-value;
+}
+
+@function color($name, $category: null, $nested-name: null) {
+    // Retrieve a first level color
+    @if not $category and not $nested-name {
+        @return map-get(variables.$colors, $name);
+    }
+
+    // Retrieve a second level color
+    @if $category != null and $nested-name == null {
+        @return map-get(map-get(variables.$colors, $name), $category);
+    }
+
+    // Retrieve a third level color
+    @else if $category != null and $nested-name != null {
+        @return map-get(map-get(map-get(variables.$colors, $name), $category), $nested-name);
+    }
+}
+
+@function rem-calc($value) {
+    $base-font-size: 16;
+
+    $rem-value: math.div(strip-unit($value), $base-font-size) + rem;
+  
+    @return $rem-value;
+  }
+
+//Helper for hover and/or focus States
+@mixin hover-focus-state($type: null) {
+    @if $type == hover {
+        &:hover {
+            @content;
+        }
+    } @else if $type == focus {
+        &:focus-visible {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:focus-visible {
+            @content;
+        }
+    }
+}
+
+//TODO: Evaluate functionality for splitting into hsl
+@mixin define-color($title, $color) {
+    --#{$title}-h: #{hue($color)};
+    --#{$title}-l: #{lightness($color)};
+    --#{$title}-s: #{saturation($color)};
+    --#{$title}-a: #{alpha($color)};
+}
+
+@function color-assembly($title, $hue: 0deg, $lightness: 0%, $saturation: 0%, $alpha: 0) {
+    @return hsla(
+        calc(var(--#{$title}-h) + #{$hue}), 
+        calc(var(--#{$title}-s) + #{$saturation}),
+        calc(var(--#{$title}-l) + #{$lightness}),
+        calc(var(--#{$title}-a) + #{$alpha}),
+    );
+}

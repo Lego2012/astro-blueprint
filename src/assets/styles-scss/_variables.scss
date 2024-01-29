@@ -1,0 +1,66 @@
+@use "utils";
+
+$colors: (
+    white: hsl(0deg 0% 100%),
+    black: hsl(0deg 0% 0%),
+    positive: hsl(163deg 72% 41%),
+    negative: hsl(356deg 69% 56%),
+
+    primary: hsl(221deg, 51%, 16%),
+    secondary: hsl(0deg, 0%, 90%),
+    accent: hsl(37deg, 98%, 53%),
+
+
+    socials: (
+        facebook: hsl(208deg 92% 53%),
+        twitter: hsl(203deg 89% 53%),
+        instagram-yellow:hsl(37deg 97% 70%),
+        instagram-pink: hsl(329deg 70% 58%),
+        youtube: hsl(348deg 97% 39%),
+    ),
+
+    dark-theme: (
+    ),
+);
+
+
+//Font size generator
+$font-sizes: (
+    small: 12px,
+    medium: 16px,
+    large: 24px,
+    xlarge: 32px,
+    xxlarge: 48,
+);
+
+@function get-font-size($size) {
+    @return utils.rem-calc(map-get($font-sizes, $size));
+}
+
+@function generate-clamp-value($size) {
+    $font-size: get-font-size($size);
+    $clamp-value: clamp(#{$font-size - 10%}, 2vw, $font-size);
+    @return $clamp-value;
+}
+
+
+$font-size-small: clamp(get-font-size(small) - 10%, 2vw, get-font-size(small));
+$font-size-medium: clamp(get-font-size(medium) - 10%, 2vw, get-font-size(medium));
+$font-size-large: clamp(get-font-size(large) - 10%, 2vw, get-font-size(large));
+$font-size-xlarge: clamp(get-font-size(xlarge) - 10%, 2vw, get-font-size(xlarge));
+$font-size-xxlarge: clamp(get-font-size(xxlarge) - 10%, 2vw, get-font-size(xxlarge));
+
+//breakpoint generator
+$breakpoints: (
+    medium: 400px,
+    large: 900px
+);
+
+//breakpoints
+@mixin breakpoint($breakpoint) {
+    $min-width: map-get($breakpoints, $breakpoint);
+
+    @media only screen and (min-width: $min-width) {
+        @content;
+    }
+}

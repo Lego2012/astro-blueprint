@@ -17,6 +17,7 @@
       "astro-meta-tags": "^0.2.1",
       "date-fns": "^3.3.1",
       "open-props": "^1.6.17",
-      "postcss-jit-props": "^1.0.14"
+      "postcss-jit-props": "^1.0.14",
+      "sass": "^1.70.0"
    }
 }
