@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import data from "../data/site.json";
+
+import { Icon } from "astro-icon/components";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Leos Astro">
+   <div class="container">
+      <h1>Dies ist eine neue Überschrift</h1>
+      <p>{data.name}</p>
+      <p>{data.nachname}</p>
+      <p>Dieser Text ist von {data.name}</p>
+      <p>{data.name} ist {data.person.alter} Jahre alt.</p>
+      <a href={`https://${data.name}merkel.de`}
+         >Webseite von {data.name.toUpperCase()}</a
+      >
+      <p>https://{data.name.toLowerCase()}merkel.de</p>
+      <Icon name="icon" size={200} color="blue" />
+   </div>
+</Layout>
+
+<style>
+   h1 {
+      background-color: var(--lm-primary);
+
+      &:hover {
+         background-color: green;
+      }
+   }
+</style>

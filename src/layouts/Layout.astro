@@ -1,0 +1,108 @@
+---
+import { AstroFont } from "astro-font";
+import { ViewTransitions } from "astro:transitions";
+
+import "../assets/styles/styles.css";
+import "../../node_modules/open-props/normalize.min.css";
+import Card from "../components/Card.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <AstroFont
+         config={[
+            {
+               name: "Bellota",
+               src: [
+                  {
+                     style: "regular",
+                     weight: "400",
+                     path: "./public/fonts/Bellota-Regular.woff2",
+                  },
+                  {
+                     style: "bold",
+                     weight: "700",
+                     path: "./public/fonts/Bellota-Bold.woff2",
+                  },
+               ],
+               preload: false,
+               display: "swap",
+               selector: "body",
+               fallback: "sans-serif",
+            },
+         ]}
+      />
+      <meta charset="UTF-8" />
+      <meta name="description" content="Astro description" />
+      <meta name="viewport" content="width=device-width" />
+      <link
+         rel="apple-touch-icon"
+         sizes="180x180"
+         href="/apple-touch-icon.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="/favicon-32x32.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="16x16"
+         href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
+      <meta name="generator" content={Astro.generator} />
+      <link rel="sitemap" href="/sitemap-index.xml" />
+      <title>{title}</title>
+      <ViewTransitions />
+   </head>
+   <body>
+      <!-- NAVIGATION -->
+      <nav>
+         <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+         </ul>
+      </nav>
+
+      <!-- MAIN -->
+      <main>
+         <a href="/full-width">To Full Width Example</a>
+         <slot />
+         <code>
+            <Card
+               href="/"
+               title="Muster Card"
+               body="This card lives in Layout.astro"
+            />
+         </code>
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+         <small>
+            Copyright &copy; <span id="copyright"></span>
+            All rights reserved
+         </small>
+      </footer>
+
+      <script>
+         document.querySelector("#copyright").textContent = new Date()
+            .getFullYear()
+            .toString();
+      </script>
+
+      <!-- STYLES -->
+      <style>
+         a {
+            color: black;
+         }
+      </style>
+   </body>
+</html>

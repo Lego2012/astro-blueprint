@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import data from "../data/site.json";
+
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Welcome to Leos About Page">
+   <div class="container">
+      <h1>Dies ist die About Page</h1>
+      <p>{data.name}</p>
+      <p>{data.nachname}</p>
+      <Icon name="icon" size={200} color="green" />
+   </div>
+</Layout>
+
+<style>
+   h1 {
+      background-color: var(--lm-primary);
+
+      &:hover {
+         background-color: yellow;
+      }
+   }
+</style>
