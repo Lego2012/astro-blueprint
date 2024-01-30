@@ -3,5 +3,5 @@
 :root {
    --lm-test: blue;
    --lm-brand: var(--lime-3);
-   --lm-primary: var(--blue);
+   --lm-primary: var(--cyan-4);
 }
