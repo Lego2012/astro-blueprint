@@ -64,7 +64,9 @@ const { title } = Astro.props;
    </head>
    <body>
       <!-- NAVIGATION -->
-      <nav>
+      <!-- Navigation should not live in main tag -->
+      <!-- Container and margin kicks in at < medium breakpoint -->
+      <nav class="md:container md:mx-auto">
          <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
@@ -76,12 +78,25 @@ const { title } = Astro.props;
       </nav>
 
       <!-- MAIN -->
-      <main>
-         <slot />
+      <!-- Container and margin kicks in at < medium breakpoint -->
+      <main id="content" role="main" class="md:container md:mx-auto">
+         <!-- HEADER -->
+         <header role="banner">
+            <!-- header content -->
+         </header>
+
+         <!-- ARTICLE -->
+         <article>
+            <!-- MAIN CONTENT -->
+            <slot />
+         </article>
       </main>
+      <!-- MAIN END -->
 
       <!-- FOOTER -->
-      <footer>
+      <!-- Footer should not live in main tag -->
+      <!-- Container and margin kicks in at < medium breakpoint -->
+      <footer role="contentinfo" class="md:container md:mx-auto">
          <small>
             Copyright &copy; <span id="copyright"></span>
             All rights reserved
