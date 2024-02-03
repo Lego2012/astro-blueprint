@@ -1,0 +1,109 @@
+{
+	"files": [
+		{
+			"path": "src/assets/styles/styles.css",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 19,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/layouts/Layout.astro",
+			"bookmarks": [
+				{
+					"line": 13,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 65,
+					"column": 17,
+					"label": ""
+				},
+				{
+					"line": 74,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 87,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 95,
+					"column": 18,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/pages/projects/[projects].astro",
+			"bookmarks": [
+				{
+					"line": 1,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 4,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 38,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/pages/about.astro",
+			"bookmarks": [
+				{
+					"line": 1,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/pages/full-width.astro",
+			"bookmarks": [
+				{
+					"line": 1,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/pages/index.astro",
+			"bookmarks": [
+				{
+					"line": 1,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/pages/projects.astro",
+			"bookmarks": [
+				{
+					"line": 1,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 10,
+					"column": 16,
+					"label": ""
+				}
+			]
+		}
+	]
+}

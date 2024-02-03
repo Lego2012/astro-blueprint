@@ -1,6 +1,8 @@
 ---
+// IMPORTS
 import MainLayout from "../../layouts/Layout.astro";
 
+// PROJECTS
 export async function getStaticPaths() {
    return [
       {
@@ -34,6 +36,7 @@ export async function getStaticPaths() {
    ];
 }
 
+// VARIABLES
 const { projects } = Astro.params;
 const { name, desc } = Astro.props;
 ---
