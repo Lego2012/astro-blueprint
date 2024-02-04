@@ -193,3 +193,32 @@ Usage:
 If you want to see them in action, the [first two are looked at in this video](https://youtu.be/r1IitKbJRFE) and the [second two are looked at in this video](https://youtu.be/JHregeIsjPQ).
 
 If you’re still struggling with grid, I’d suggest [checkout out this video](https://youtu.be/rg7Fvvl3taU) that looks at what I think are the easiest ways to get going with it.
+
+# 25 lines of CSS is all you need (to start with, anyway)
+
+~~~css
+/* The user setting decides about the mode */
+html {
+   color-scheme: light dark;
+}
+
+body {
+   font-family: system-ui;
+   font-size: 1.125rem;
+   line-height: 1.6;
+}
+
+img,
+picture,
+svg {
+   max-width: 100%;
+   display: block;
+}
+
+main {
+   width: min(65ch, 100% - 4rem);|
+   margin-inline: auto;
+}
+~~~
+
+![25 Lines of CSS](https://bilder.leomerkel.de/25-lines-css.png)
