@@ -9,5 +9,13 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
    site: 'https://www.example.com',
-   integrations: [metaTags(), icon(), sitemap(), tailwind(), mdx()]
+   // Markdown-Plugin konfigurieren
+   markdown: {
+      shikiConfig: {
+         theme: "one-dark-pro",
+         wrap: true,
+      },
+   },
+   // Aszro Plugins konfigurieren
+   integrations: [tailwind(), metaTags(), icon(), sitemap(), mdx()]
 });

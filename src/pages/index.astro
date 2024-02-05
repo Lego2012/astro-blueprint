@@ -3,12 +3,23 @@
 import Layout from "../layouts/Layout.astro";
 import data from "../data/site.json";
 import { Icon } from "astro-icon/components";
+
+// VARIABLES
+const isProd = import.meta.env.PROD;
+const isDev = import.meta.env.DEV;
 ---
 
 <Layout title="Welcome to Leos Astro">
    <!-- This comes from Tailwind -->
-   <div class="bg-zinc-500">
+   <div class="bg-zinc-300">
       <h1>Startseite</h1>
+
+      {
+         isProd
+            ? "Dies wird nur in Production Mode angezeigt"
+            : "Dies wird nur im Development Mode angezeigt"
+      }
+
       <p>{data.name}</p>
       <p>{data.nachname}</p>
       <p>Dieser Text ist von {data.name}</p>
@@ -21,10 +32,3 @@ import { Icon } from "astro-icon/components";
       <Icon name="icon" size={200} color="var(--lm-secondary)" />
    </div>
 </Layout>
-
-<style>
-   /* This comes from Open Props */
-   p {
-      color: var(--brown-2);
-   }
-</style>

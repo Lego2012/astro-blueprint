@@ -2,14 +2,17 @@
 // IMPORTS
 import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
-import "../assets/styles/styles.css";
-import "../../node_modules/open-props/normalize.min.css";
+// import "../../node_modules/open-props/normalize.min.css";
 
 // VARIABLES
 const { title } = Astro.props;
 ---
 
-<!doctype html>
+<!-- Das ist die eigene CSS-Datei, in der ich Tailwind beliebig verändern kann -->
+<style is:global>
+   @import "../assets/styles/styles.css";
+</style>
+
 <html lang="en">
    <!-- HEAD -->
    <head>

@@ -66,3 +66,23 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 # PostCSS
 
 Because Astro runs Vite under the hood we don't need to load the PostCSS and Sass dependencies because Vite has that included by default.
+
+# Tailwind
+
+If Tailwind shall not be used with the standard configuration there's a `tw-base.css` which can be used as a custom css file. In that case the Astro config has to change:
+
+~~~js
+...
+// https://astro.build/config
+export default defineConfig({
+   ...
+   // Astro-Plugins registrieren
+   integrations: [
+      tailwind({
+         config: {
+            applyBaseStyles: false,
+         },
+      }), ...
+   ],
+});
+~~~
