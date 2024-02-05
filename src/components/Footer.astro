@@ -1,7 +1,18 @@
 <!-- Container and margin kicks in at < medium breakpoint -->
 <footer role="contentinfo" class="md:container md:mx-auto">
    <small>
-      Copyright &copy; <span id="copyright"></span>
-      All rights reserved
+      &copy; <span id="currentYear"></span> Leo Merkel. All rights reserved.
    </small>
 </footer>
+
+<script>
+   // Get the current year
+   let currentDate = new Date();
+   let currentYear = currentDate.getFullYear();
+
+   // Find the element with the id "currentYear"
+   let currentYearElement = document.getElementById("currentYear");
+
+   // Update the content of the element with the current year
+   currentYearElement.textContent = currentYear;
+</script>
