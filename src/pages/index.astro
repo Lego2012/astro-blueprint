@@ -14,20 +14,21 @@ const isDev = import.meta.env.DEV;
    title="Welcome to Leos Astro"
    metaDesc="Dies ist die Beschreibung der Startseite"
 >
+   {
+      isProd ? (
+         <p class="text-4xl">Dies wird nur in Production Mode angezeigt</p>
+      ) : (
+         <p class="text-4xl">Dies wird nur im Development Mode angezeigt</p>
+      )
+   }
+
    <!-- This comes from Tailwind -->
    <div class="bg-zinc-300">
       <h1>Startseite</h1>
-
-      {
-         isProd
-            ? "Dies wird nur in Production Mode angezeigt"
-            : "Dies wird nur im Development Mode angezeigt"
-      }
-
       <p>{data.name}</p>
       <p>{data.nachname}</p>
       <p>Dieser Text ist von {data.name}</p>
-      <p>{data.name} ist {data.person.alter} Jahre alt.</p>
+      <!-- <p>{data.name} ist {data.person.alter} Jahre alt.</p> -->
       <a href={`https://${data.name}merkel.de`}
          >Webseite von {data.name.toUpperCase()}</a
       >
