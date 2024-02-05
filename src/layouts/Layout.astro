@@ -1,84 +1,21 @@
 ---
-// IMPORTS
-import { AstroFont } from "astro-font";
-import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import Navigation from "../components/Navigation.astro";
 // import "../../node_modules/open-props/normalize.min.css";
+import "../assets/styles/styles.css";
 
-// VARIABLES
-const { title } = Astro.props;
+const { title, metaDesc } = Astro.props;
 ---
-
-<!-- Das ist die eigene CSS-Datei, in der ich Tailwind beliebig verändern kann -->
-<style is:global>
-   @import "../assets/styles/styles.css";
-</style>
 
 <html lang="en">
    <!-- HEAD -->
-   <head>
-      <AstroFont
-         config={[
-            {
-               name: "Bellota",
-               src: [
-                  {
-                     style: "regular",
-                     weight: "400",
-                     path: "./public/fonts/Bellota-Regular.woff2",
-                  },
-                  {
-                     style: "bold",
-                     weight: "700",
-                     path: "./public/fonts/Bellota-Bold.woff2",
-                  },
-               ],
-               preload: false,
-               display: "swap",
-               selector: "body",
-               fallback: "sans-serif",
-            },
-         ]}
-      />
-      <meta charset="UTF-8" />
-      <meta name="description" content="Astro description" />
-      <meta name="viewport" content="width=device-width" />
-      <link
-         rel="apple-touch-icon"
-         sizes="180x180"
-         href="/apple-touch-icon.png"
-      />
-      <link
-         rel="icon"
-         type="image/png"
-         sizes="32x32"
-         href="/favicon-32x32.png"
-      />
-      <link
-         rel="icon"
-         type="image/png"
-         sizes="16x16"
-         href="/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/site.webmanifest" />
-      <meta name="generator" content={Astro.generator} />
-      <link rel="sitemap" href="/sitemap-index.xml" />
-      <title>{title}</title>
-      <ViewTransitions />
-   </head>
+   <Head title={title} metaDesc={metaDesc} />
    <body>
       <!-- NAVIGATION -->
       <!-- Navigation should not live in main tag -->
-      <!-- Container and margin kicks in at < medium breakpoint -->
-      <nav class="md:container md:mx-auto">
-         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/full-width">To Full Width Example</a></li>
-            <li><a href="/datenschutz">Datenschutz</a></li>
-            <li><a href="/impressum">Impressum</a></li>
-         </ul>
-      </nav>
+      <Navigation />
 
       <!-- MAIN -->
       <!-- Container and margin kicks in at < medium breakpoint -->
@@ -88,13 +25,11 @@ const { title } = Astro.props;
          class="md:container md:mx-auto w-full min-h-screen bg-slate-200"
       >
          <!-- HEADER -->
-         <header role="banner">
-            <!-- header content -->
-         </header>
+         <Header />
 
          <!-- ARTICLE -->
          <article>
-            <!-- MAIN CONTENT -->
+            <!-- main content -->
             <slot />
          </article>
       </main>
@@ -102,13 +37,7 @@ const { title } = Astro.props;
 
       <!-- FOOTER -->
       <!-- Footer should not live in main tag -->
-      <!-- Container and margin kicks in at < medium breakpoint -->
-      <footer role="contentinfo" class="md:container md:mx-auto">
-         <small>
-            Copyright &copy; <span id="copyright"></span>
-            All rights reserved
-         </small>
-      </footer>
+      <Footer />
 
       <!-- SCRIPTS -->
       <script>
