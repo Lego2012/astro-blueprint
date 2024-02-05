@@ -2,6 +2,7 @@
 import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
 
+// The incoming page has a title and a description which will be stored here
 const { title, metaDesc } = Astro.props;
 ---
 
@@ -30,6 +31,7 @@ const { title, metaDesc } = Astro.props;
       ]}
    />
    <meta charset="UTF-8" />
+   <!-- We use the Meta Description from the incomping page -->
    <meta name="description" content={metaDesc} />
    <meta name="viewport" content="width=device-width" />
    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -38,6 +40,7 @@ const { title, metaDesc } = Astro.props;
    <link rel="manifest" href="/site.webmanifest" />
    <meta name="generator" content={Astro.generator} />
    <link rel="sitemap" href="/sitemap-index.xml" />
+   <!-- We use the Title from the incomping page -->
    <title>{title}</title>
    <ViewTransitions />
 </head>

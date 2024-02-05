@@ -1,6 +1,6 @@
 ---
 // IMPORTS
-import MainLayout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 // PROJECTS
 export async function getStaticPaths() {
@@ -41,7 +41,10 @@ const { projects } = Astro.params;
 const { name, desc } = Astro.props;
 ---
 
-<MainLayout>
+<Layout
+   title="Dies ist die Projekte Seite"
+   metaDesc="Dies ist die Beschreibung der Projekte Seite"
+>
    <section class="mx-auto w-3/6">
       <img
          src=`/images/${projects}.png`
@@ -53,4 +56,4 @@ const { name, desc } = Astro.props;
       <p>{desc}</p>
       <section></section>
    </section>
-</MainLayout>
+</Layout>
