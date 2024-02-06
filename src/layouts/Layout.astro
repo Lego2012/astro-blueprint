@@ -10,25 +10,25 @@ const { title, metaDesc } = Astro.props;
 ---
 
 <html lang="en">
-   <!-- HEAD -->
+   <!-- ANCHOR: HEAD -->
    <!-- Title and Meta Description are coming from the Head component which received the values fromo the incoming page -->
    <Head title={title} metaDesc={metaDesc} />
    <body>
-      <!-- NAVIGATION -->
+      <!-- ANCHOR: NAVIGATION -->
       <!-- Navigation should not live in main tag -->
       <Navigation />
 
-      <!-- MAIN -->
+      <!-- ANCHOR: MAIN -->
       <!-- Container and margin kicks in at < medium breakpoint -->
       <main
          id="content"
          role="main"
          class="md:container md:mx-auto w-full min-h-screen bg-slate-200"
       >
-         <!-- HEADER -->
+         <!-- ANCHOR: HEADER -->
          <Header />
 
-         <!-- ARTICLE -->
+         <!-- ANCHOR: ARTICLE -->
          <article>
             <!-- main content -->
             <slot />
@@ -36,11 +36,11 @@ const { title, metaDesc } = Astro.props;
       </main>
       <!-- MAIN END -->
 
-      <!-- FOOTER -->
-      <!-- Footer should not live in main tag -->
+      <!-- ANCHOR: FOOTER -->
+      <!-- NOTE: Footer should not live in main tag -->
       <Footer />
 
-      <!-- SCRIPTS -->
+      <!-- ANCHOR: SCRIPTS -->
       <script>
          document.querySelector("#copyright").textContent = new Date()
             .getFullYear()
