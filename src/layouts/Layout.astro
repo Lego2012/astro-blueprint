@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Navigation from "../components/Navigation.astro";
 // import "../../node_modules/open-props/normalize.min.css";
 import "../assets/styles/styles.css";
+import "../js/app.js";
 
 const { title, metaDesc } = Astro.props;
 ---
@@ -39,12 +40,5 @@ const { title, metaDesc } = Astro.props;
       <!-- ANCHOR: FOOTER -->
       <!-- NOTE: Footer should not live in main tag -->
       <Footer />
-
-      <!-- ANCHOR: SCRIPTS -->
-      <script>
-         document.querySelector("#copyright").textContent = new Date()
-            .getFullYear()
-            .toString();
-      </script>
    </body>
 </html>
