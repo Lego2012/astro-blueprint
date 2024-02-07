@@ -3,6 +3,7 @@
 import Layout from "../layouts/Layout.astro";
 import data from "../data/site.json";
 import { Icon } from "astro-icon/components";
+import Card from "../components/Card.astro";
 
 // VARIABLES
 const isProd = import.meta.env.PROD;
@@ -35,5 +36,11 @@ const isDev = import.meta.env.DEV;
       <p>https://{data.name.toLowerCase()}merkel.de</p>
       <!-- This comes from styles.css -->
       <Icon name="icon" size={200} color="var(--lm-secondary)" />
+      <div class="grid grid-cols-4 gap-4">
+         <Card title="Card Titel" body="Dies ist der Bodytext" href="/" />
+         <Card title="Card Titel" body="Dies ist der Bodytext" href="/" />
+         <Card title="Card Titel" body="Dies ist der Bodytext" href="/" />
+         <Card title="Card Titel" body="Dies ist der Bodytext" href="/" />
+      </div>
    </div>
 </Layout>
