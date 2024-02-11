@@ -23,3 +23,7 @@
 [Splendid Astro Spacing — A Tailwind](https://medium.com/@zellwk/splendid-astro-spacing-a-tailwind-045a8862a354)
 
 [Shuffle → Tailwind Website Builder](https://shuffle.dev/dashboard)
+
+[daisyUI](https://daisyui.com)
+
+[Tailwind Components](https://github.com/unlight/tailwind-components)
