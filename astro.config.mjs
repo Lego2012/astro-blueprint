@@ -17,5 +17,11 @@ export default defineConfig({
       },
    },
    // Aszro Plugins konfigurieren
-   integrations: [tailwind(), metaTags(), icon(), sitemap(), mdx()]
+   integrations: [
+      tailwind({
+         config: {
+            applyBaseStyles: false,
+         },
+      }),
+      metaTags(), icon(), sitemap(), mdx()]
 });

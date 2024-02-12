@@ -1,3 +1,0 @@
-Install Sass in package.json and
-reference the global.scss in the Base Layout
-import "../assets/styles-scss/global.scss";

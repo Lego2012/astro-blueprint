@@ -3,12 +3,19 @@ import Footer from "../components/Footer.astro";
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Navigation from "../components/Navigation.astro";
-// import "../../node_modules/open-props/normalize.min.css";
-import "../assets/styles/styles.css";
+import "../assets/styles/tw-base.css";
 import "../js/app.js";
 
 const { title, metaDesc } = Astro.props;
 ---
+
+<style is:global>
+   :root {
+      --lm-test: blue;
+      --lm-brand: var(--lime-3);
+      --lm-primary: var(--cyan-4);
+   }
+</style>
 
 <html lang="en">
    <!-- ANCHOR: HEAD -->
