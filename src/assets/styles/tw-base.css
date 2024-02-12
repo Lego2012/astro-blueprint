@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+   --lm-test: blue;
+   --lm-brand: var(--lime-3);
+   --lm-primary: var(--cyan-4);
+}
+
 @layer base {
    h1 {
       @apply text-4xl md:text-6xl mb-6 md:mb-12;
@@ -52,3 +58,8 @@
       @apply bg-blue-700 dark:bg-green-400 text-light dark:text-dark rounded-lg px-2 whitespace-nowrap;
    }
 }
+
+/* h1 {
+   color: var(--lm-brand);
+   background-color: var(--sand-2);
+} */

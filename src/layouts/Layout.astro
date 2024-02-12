@@ -9,25 +9,13 @@ import "../js/app.js";
 const { title, metaDesc } = Astro.props;
 ---
 
-<style is:global>
-   :root {
-      --lm-test: blue;
-      --lm-brand: var(--lime-3);
-      --lm-primary: var(--cyan-4);
-   }
-
-   .leo-regel {
-      color: var(--sand-4);
-   }
-</style>
-
 <html lang="en">
    <!-- ANCHOR: HEAD -->
    <!-- Title and Meta Description are coming from the Head component which received the values fromo the incoming page -->
    <Head title={title} metaDesc={metaDesc} />
    <body>
       <!-- ANCHOR: NAVIGATION -->
-      <!-- Navigation should not live in main tag -->
+      <!-- NOTE Navigation should not live in main tag -->
       <Navigation />
 
       <!-- ANCHOR: MAIN -->
@@ -42,14 +30,12 @@ const { title, metaDesc } = Astro.props;
 
          <!-- ANCHOR: ARTICLE -->
          <article>
-            <!-- main content -->
             <slot />
          </article>
       </main>
-      <!-- MAIN END -->
 
       <!-- ANCHOR: FOOTER -->
-      <!-- NOTE: Footer should not live in main tag -->
+      <!-- NOTE Footer should not live in main tag -->
       <Footer />
    </body>
 </html>
